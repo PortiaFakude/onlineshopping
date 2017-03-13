@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      >
+    
+
+    
+    <h:head>
+        <title>Register</title>
+ 
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+	<!--[if lte IE 6]><link rel="stylesheet" href="css/ie6.css" type="text/css" media="all" /><![endif]-->
+       <link rel="stylesheet" href="css/stylelog.css" media="screen" type="text/css" />
+
+	
+	<meta name="keywwords" content="Shop Around - Great free html template for on-line shop. Use it as a start point for your on line business. The template can be easily implemented in many open source E-commerce platforms" />
+	<meta name="description" content="Shop Around - Great free html template for on-line shop. Use it as a start point for your on line business. The template can be easily implemented in many open source E-commerce platforms" />
+	
+	<!-- JS -->
+	<script src="js/jquery-1.4.1.min.js" type="text/javascript"></script>	
+	<script src="js/jquery.jcarousel.pack.js" type="text/javascript"></script>	
+	<script src="js/jquery-func.js" type="text/javascript"></script>
+
+     
+
+        <style>
+            body{
+                  background-image: url("css/images/background3.jpg");
+           
+                 
+                }
+            
+        </style>
+        
+        <script type="text/javascript">
+        
+            function Redirect() {
+               window.location.href="http://localhost:8080/onlineshoping/faces/Login.xhtml";
+            }
+        
+      </script>
+       
+    </h:head>
+    <h:body>
+         <div class="shell">
+	
+	<!-- Header -->	
+	<div id="header">
+		<h1 id="logo"><a href="#">shoparound</a></h1>	
+		
+		<!-- Cart -->
+		<div id="cart">
+			<a href="#" class="cart-link">Your Shopping Cart</a>
+			<div class="cl">&nbsp;</div>
+			<span>Articles: <strong>4</strong></span>
+			&nbsp;&nbsp;
+			<span>Cost: <strong>$250.99</strong></span>
+		</div>
+		<!-- End Cart -->
+		
+		<!-- Navigation -->
+		<div id="navigation">
+			<ul>
+			    <li><a href="index.xhtml" class="active">Home</a></li>
+			    <li><a href="Login.xhtml">Login</a></li>
+			    <li><a href="#">My Account</a></li>
+			    <li><a href="#">The Store</a></li>
+			</ul>
+		</div>
+		<!-- End Navigation -->
+	</div>
+	<!-- End Header -->
+        </div>
+        <div class="login-card">
+           
+            <h:form id ="register">
+    <table colspan ="2"> 
+       
+        <h:panelGrid id="panel1" columns="2" cellpadding="10" cellspacing="1" >
+              <f:facet name="header">
+                  <h:outputText value="REGISTER" style="font-family:calibri;color:blue;font-size:26px;"/><br/>
+                  <h:outputText value="Fields marked * are mandatory." style="font-family:courier new;color:red;font-size:12px;" />
+                </f:facet>
+          
+          
+             
+                <tr>
+                   
+                    <h:outputLabel>*First Name:
+                        <td><h:inputText value="#{customer.custName}" id = "name"
+                                         required="true"  requiredMessage="Please enter your name" tabindex="2">
+                                <f:validator validatorId="nameValidator" />
+                            </h:inputText></td>
+                        
+                    </h:outputLabel>
+                  
+                    <!--<f:validateLength minimum="5" maximum="8" />-->
+                </tr>
+            
+            <td><h:message for="name" style="color: red"/></td>
+            
+         
+                <!--
+                    <tr>
+                    <td><h:outputText value="Enter Your First Name:" /></td>
+                    <td><h:inputText id="fname" value="#{user.firstName}"
+                            required="true" requiredMessage="Please enter your first name" /></td>
+                    <td><h:message for="fname" style="color:red" /></td>
+                    </tr> -->
+                 
+                <tr>             
+                  <h:outputLabel>*Last Name:
+                      <td><h:inputText value="#{customer.custSurname}" id="lastN" 
+                                       required="true" requiredMessage="Please enter your surname" tabindex="3">
+                      <f:validator validatorId="surnameValidator" />
+                          </h:inputText></td>
+                     
+                  </h:outputLabel> 
+                </tr>
+               <td><h:message for="lastN" style="color: red"/></td>
+               
+                <tr>
+                <h:outputLabel>*Date of Birth:   Eg.01/01/2001(dd/mm/yyyy)
+                    <td><h:inputText value="#{customer.custDOB}" id="dob" 
+                                     required="true" requiredMessage="Please enter your date of birth" tabindex="4">
+                            <f:validator validatorId="dateValidator"/>
+                        </h:inputText></td>      
+                
+                </h:outputLabel> 
+                </tr> 
+              <td><h:message for="dob" style="color: red"/></td>
+              <!--
+               <tr>
+                   <h:outputLabel>Date of birth:
+                   <td><input type="date" id="custDOB" name="custDOB" required="true" value="#{customer.custDOB}"/></td>
+                   </h:outputLabel>
+               </tr> 
+                
+               --> 
+                
+            <!--
+                   <h:outputLabel>*Date of birth:
+                       <h:inputText id="dob" value="#{customer.custDOB}">
+                       <td><f:convertDateTime pattern="dd-mm-yyyy" /></td>
+                       </h:inputText>
+                      <br/>
+                       <td><h:message for="dob" style="color:red" /></td>
+                       <h:outputText >
+                           <f:convertDateTime pattern="dd-mm-yyyy" />
+                       </h:outputText>
+                  
+                   </h:outputLabel> -->
+                 
+               
+               <!--
+               <h:form>
+         <h:inputText id="dateInput" value="#{userData.date}"
+            label="Date" >
+            <f:convertDateTime pattern="dd-mm-yyyy" />
+         </h:inputText>
+         <h:commandButton value="submit" action="result"/>
+      </h:form>
+      <br/>
+      <h:message for="dateInput" style="color:red" />
+      <h:outputText value="12-01-2012" >
+         <f:convertDateTime pattern="dd-mm-yyyy" />
+      </h:outputText> -->
+               
+                
+                <!--<h:outputLabel value="Gender:"/>
+                <h:inputText value="#{customer.custGender}" /> -->
+                
+          
+                
+                <tr>
+                <h:outputLabel>*Gender:
+                    <td><h:selectOneMenu value="#{customer.custGender}" id="gen" >       
+                    <f:selectItem itemValue="Female" itemLabel="Female"/>
+                    <f:selectItem itemValue="Male" itemLabel="Male"/>
+                    </h:selectOneMenu></td> 
+                </h:outputLabel>
+                </tr>
+               
+                
+               <!--
+               <tr>
+                <td><h:outputLabel>Gender:</h:outputLabel></td>
+                <td><select>
+                        <option name="custGender" required = "true"  id="custGender" value="#{customer.custGender}">Female</option>
+                        <option name="custGender" required = "true" id="custGender" value="#{customer.custGender}">Male</option>
+
+                    </select></td>
+                </tr>-->
+               
+                
+               <tr>
+                   <h:outputLabel>*Contact:
+                       <td><h:inputText value="#{customer.custContact}" id ="con"
+                                        required="true" requiredMessage="Please enter your contact numbers" tabindex="5">
+                               <f:validator validatorId="contactValidator"/>
+                           </h:inputText></td>
+                   </h:outputLabel>
+               </tr>
+               <td><h:message for="con" style="color: red"/></td>
+               
+               <tr>
+                   <h:outputLabel>*Email:
+                       <td><h:inputText value="#{customer.custEmail}" id ="eml" 
+                                        required="true" requiredMessage="Please enter your email" tabindex="6">
+                       <f:validator validatorId="com.onlineshopping.EmailValidator" />
+                       
+                       </h:inputText></td>
+                       
+                       <!-- requiredMessage="Please enter your email address" -->
+                       <!-- <td><h:message for="eml" style="color: red"  /></td> -->
+                   </h:outputLabel>
+                   
+               </tr>
+               <h:message for="eml" style="color: red"/>
+               
+               
+               
+               <tr>
+                   <h:outputLabel>*Password:
+                    <td><h:inputSecret value="#{customer.custPassword}" id ="custPassword" 
+                                       required="true" requiredMessage="Please enter the password" tabindex="7">
+
+                       <f:validator validatorId="passwordValidator"/>
+                       <f:attribute name="confirmPassword" value="#{confirmPassword}"/>
+                        </h:inputSecret></td>
+                    
+                    </h:outputLabel>
+               </tr>
+               <h:message for="custPassword" style="color: red"/>
+               
+               <tr>
+                   <h:outputLabel>*Confirm password
+                   <td><h:inputSecret  id="confirmPassword" binding="#{confirmPassword}" 
+                                       required="true" requiredMessage="Please enter confirm password" tabindex="1">
+                       </h:inputSecret></td>
+                    
+                    </h:outputLabel>
+               </tr>
+               <td><h:message for="confirmPassword" style="color: red"/></td>
+                <!-- <h:outputLabel value="#{customer.msg}" style="color:red" id="msg" styleClass="msg"/> -->
+                
+               <tr><td><h:commandButton   actionListener="#{customer.sendEmail(from, password, message, to)}"   value="REGISTER" style="font-family:calibri;font-size:26px;" class="login login-submit" action="#{customer.saveCustomer()}"></h:commandButton></td></tr>
+                               
+    </h:panelGrid>
+    
+    </table>
+            
+    </h:form>
+     
+    </div>
+
+  </h:body>
+</html>
+
+
